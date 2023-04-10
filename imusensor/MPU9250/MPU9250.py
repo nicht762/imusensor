@@ -517,7 +517,7 @@ class MPU9250:
         filters in filters folder to get a better estimate.
 
         """
-        self.roll = np.arctan2(self.AccelVals[1], self.AccelVals[2] + 0.05 * self.AccelVals[0])
+        self.roll = np.arctan2(self.AccelVals[1], self.AccelVals[2])
         self.pitch = np.arctan2(-1 * self.AccelVals[0],
                                 np.sqrt(np.square(self.AccelVals[1]) + np.square(self.AccelVals[2])))
         magLength = np.sqrt(np.square(self.MagVals).sum())
